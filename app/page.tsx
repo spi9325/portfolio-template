@@ -12,7 +12,9 @@ import { Profile } from "@/components/Profile";
 
 export default function Home() {
   function handelTemplate(value:string){
-    localStorage.setItem("template",value)
+    if (typeof window !== "undefined") {
+    localStorage.setItem("template", value);
+  }
   }
   return (
     <section className="max-w-[1440px] mx-auto border border-black p-1">
