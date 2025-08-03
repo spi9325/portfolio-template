@@ -24,9 +24,9 @@ interface heroType {
 export const Hero = () => {
   const [profile, setProfile] = useState<profileType[]>([]);
   const [hero, setHero] = useState<heroType[]>([]);
-  const storeEmail = JSON.parse(localStorage.getItem("Email")!);
-
+  
   useEffect(() => {
+    const storeEmail = JSON.parse(localStorage.getItem("Email")!);
     async function getBasicDetails() {
       const result = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/get/basicdata`,

@@ -17,14 +17,14 @@ interface profileType {
 export const Profile = () => {
   const [profile, setProfile] = useState<profileType[]>([]);
   const [review, setReview] = useState("");
-  const [email, setEmail] = useState<string | null>(null); // 👈 for storing email safely
+  const [email, setEmail] = useState<string | null>(null); 
 
   useEffect(() => {
     const stored = localStorage.getItem("Email");
     if (stored) {
       try {
         const parsed = JSON.parse(stored);
-        setEmail(parsed.Email); // 👈 set email in state
+        setEmail(parsed.Email); 
       } catch (e) {
         console.error("Failed to parse Email:", e);
       }
@@ -32,7 +32,7 @@ export const Profile = () => {
   }, []);
 
   useEffect(() => {
-    if (!email) return; // wait for email to load
+    if (!email) return; 
 
     async function getBasicDetails() {
       const result = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/get/basicdata`, {
@@ -54,7 +54,7 @@ export const Profile = () => {
 
     getBasicDetails();
     getTestimonialDetails();
-  }, [email]); // 👈 runs only after email is set
+  }, [email]); 
 
   return (
     <div className="flex flex-row gap-2 px-2 overflow-x-scroll relative md:pr-4">

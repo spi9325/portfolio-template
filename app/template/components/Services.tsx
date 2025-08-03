@@ -12,9 +12,9 @@ interface serviceType {
 
 export const Services = () => {
   const [service, setService] = useState<serviceType[]>([]);
-  const storeEmail = JSON.parse(localStorage.getItem("Email")!);
-
+  
   useEffect(() => {
+    const storeEmail = JSON.parse(localStorage.getItem("Email")!);
     async function getServiceDetails() {
       const result = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/get/servicedata`,
