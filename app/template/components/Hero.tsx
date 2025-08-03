@@ -26,11 +26,11 @@ export const Hero = () => {
   const [hero, setHero] = useState<heroType[]>([]);
   
   useEffect(() => {
-    const storeEmail = JSON.parse(localStorage.getItem("Email")!);
+    const Email = localStorage.getItem("Email")
     async function getBasicDetails() {
       const result = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/get/basicdata`,
-        { Email: storeEmail.Email }
+        { Email:Email }
       );
       if (result.data) {
         setProfile((prev) => [...prev, result.data.allBasicDetails]);
@@ -39,7 +39,7 @@ export const Hero = () => {
     async function getHeroDetails() {
       const result = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/get/herodata`,
-        { Email: storeEmail.Email }
+        { Email:Email }
       );
       if (result.data) {
         setHero((prev) => [...prev, result.data.allHeroDetails]);

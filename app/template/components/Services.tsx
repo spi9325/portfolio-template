@@ -14,11 +14,11 @@ export const Services = () => {
   const [service, setService] = useState<serviceType[]>([]);
   
   useEffect(() => {
-    const storeEmail = JSON.parse(localStorage.getItem("Email")!);
+    const Email = localStorage.getItem("Email")
     async function getServiceDetails() {
       const result = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/get/servicedata`,
-        { Email: storeEmail.Email }
+        { Email:Email }
       );
       if (result.data) {
         setService((prev) => [...prev, ...result.data.allServiceDetails]);
