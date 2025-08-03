@@ -9,11 +9,11 @@ import { Services } from './components/Services'
 const Template = () => {
   return (
     <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Hero/>
-        <Skill/>
+        {/* <Skill/>
         <Certificate/>
-        <Services/>
+        <Services/> */}
     </div>
   )
 }
