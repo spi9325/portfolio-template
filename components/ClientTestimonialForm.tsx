@@ -23,14 +23,14 @@ export const ClientAndTestimonialForm = () => {
   });
 
   const saveClientAndTestimonialDetails =async (values: z.infer<typeof ClientAndTestimonialFormSchema>) => {
-    const store = JSON.parse(localStorage.getItem("Email")!);
+    const Email = localStorage.getItem("Email")
     
      await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/addtemplate/testimonialdata`,
       {
         Client:values.Client,
         Review:values.Review,
-        Email:store.Email
+        Email:Email
       }
     );
   };

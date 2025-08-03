@@ -29,14 +29,14 @@ export const AboutSectionForm = () => {
   });
 
   const saveAboutSectionDetails =async (values: z.infer<typeof ContactDetailsFormSchema>) => {
-    const store = JSON.parse(localStorage.getItem("Email")!);
+      const Email = localStorage.getItem("Email")
     
     await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/addtemplate/aboutdata`,
       {
         Bio:values.Bio,
         Social:values.Socials,
-        Email:store.Email
+        Email:Email
       }
     );
   };

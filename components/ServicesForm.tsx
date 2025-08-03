@@ -22,14 +22,14 @@ export const ServicesForm = () => {
   });
 
   const saveServiceDetails =async (values: z.infer<typeof ServicesFormSchema>) => {
-    const store = JSON.parse(localStorage.getItem("Email")!);
+    const Email = localStorage.getItem("Email")
     
   await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/addtemplate/servicedata`,
       {
         Service:values.Service,
         Description:values.Description,
-        Email:store.Email
+        Email:Email
       }
     );
   };
