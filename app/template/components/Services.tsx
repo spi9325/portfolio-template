@@ -6,8 +6,8 @@ import React, { useEffect, useState } from "react";
 import { FaHatCowboy } from "react-icons/fa6";
 
 interface serviceType {
-  Service: String;
-  Description: String;
+  Service: string;
+  Description: string;
 }
 
 export const Services = () => {

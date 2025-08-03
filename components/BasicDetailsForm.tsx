@@ -34,8 +34,8 @@ export const BasicDetailsForm = () => {
   async function saveBasicDetails(
     values: z.infer<typeof BasicDetailsFormSchema>
   ) {
-    const storeEmail = localStorage.setItem("Email",JSON.stringify({Email:values.Email}))
-      const result = await axios.post(
+     localStorage.setItem("Email",JSON.stringify({Email:values.Email}))
+     await axios.post(
   `${process.env.NEXT_PUBLIC_BACKEND_URL}/addtemplate/basicdata`,
   {
     Name: values.Name,

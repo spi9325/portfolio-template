@@ -25,7 +25,7 @@ export const ClientAndTestimonialForm = () => {
   const saveClientAndTestimonialDetails =async (values: z.infer<typeof ClientAndTestimonialFormSchema>) => {
     const store = JSON.parse(localStorage.getItem("Email")!);
     
-    const result = await axios.post(
+     await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/addtemplate/testimonialdata`,
       {
         Client:values.Client,

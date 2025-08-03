@@ -34,7 +34,7 @@ export const HeroSectionForm = () => {
   ) {
     const store = JSON.parse(localStorage.getItem("Email")!);
     
-    const result = await axios.post(
+    await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/addtemplate/herodata`,
       {
         Title: values.Title,

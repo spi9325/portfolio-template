@@ -5,13 +5,13 @@ import { StarRating } from "./StarRatings";
 import axios from "axios";
 
 interface profileType{
-  Age:String;
-  Email:String;
-  Experience:String;
-  Location:String;
-  Name:String;
-  Projects:String;
-  Role:String;
+  Age:string;
+  Email:string;
+  Experience:string;
+  Location:string;
+  Name:string;
+  Projects:string;
+  Role:string;
 }
 export const Profile = () => {
   const [profile, setProfile] = useState<profileType[]>([]);
@@ -33,7 +33,7 @@ export const Profile = () => {
     }
     getBasicDetails();
     getTestimonialDetails();
-  },[]);
+  },[storeEmail.Email]);
   return (
     <div className="flex flex-row gap-2 px-2 overflow-x-scroll relative md:pr-4">
       {profile?.map((cur,index) => {

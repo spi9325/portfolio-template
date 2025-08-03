@@ -5,20 +5,20 @@ import React, { useEffect, useState } from "react";
 import { CiMail } from "react-icons/ci";
 
 interface profileType {
-  Age: String;
-  Email: String;
-  Experience: String;
-  Location: String;
-  Name: String;
-  Projects: String;
-  Role: String;
+  Age: string;
+  Email: string;
+  Experience: string;
+  Location: string;
+  Name: string;
+  Projects: string;
+  Role: string;
 }
 interface heroType {
-  Image: String;
-  Email: String;
-  Profile: String;
-  Tagline: String;
-  Title: String;
+  Image: string;
+  Email: string;
+  Profile: string;
+  Tagline: string;
+  Title: string;
 }
 
 export const Hero = () => {

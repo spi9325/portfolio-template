@@ -24,7 +24,7 @@ export const ServicesForm = () => {
   const saveServiceDetails =async (values: z.infer<typeof ServicesFormSchema>) => {
     const store = JSON.parse(localStorage.getItem("Email")!);
     
-    const result = await axios.post(
+  await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/addtemplate/servicedata`,
       {
         Service:values.Service,
