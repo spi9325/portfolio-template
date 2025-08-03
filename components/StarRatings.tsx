@@ -3,8 +3,8 @@ import React from "react";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 type Props = {
-  rating: number;        // example: 4.5
-  totalStars?: number;   // default: 5
+  rating: number;       
+  totalStars?: number;   
 };
 
 export const StarRating: React.FC<Props> = ({ rating, totalStars = 5 }) => {

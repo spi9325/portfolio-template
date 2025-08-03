@@ -33,7 +33,6 @@ export const HeroSectionForm = () => {
     values: z.infer<typeof HeroSectionFormSchema>
   ) {
     const Email = localStorage.getItem("Email")
-    console.log(Email,"from hero form")
     await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/addtemplate/herodata`,
       {

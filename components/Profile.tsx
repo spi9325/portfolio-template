@@ -20,15 +20,9 @@ export const Profile = () => {
   const [email, setEmail] = useState<string | null>(null); 
 
   useEffect(() => {
-    const stored = localStorage.getItem("Email");
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored);
-        setEmail(parsed.Email); 
-      } catch (e) {
-        console.error("Failed to parse Email:", e);
-      }
-    }
+    const Email = localStorage.getItem("Email")
+    if(!Email) alert("email not found")
+      setEmail(Email);
   }, []);
 
   useEffect(() => {
