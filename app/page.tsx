@@ -77,7 +77,7 @@ export default function Home() {
               className="object-cover w-full h-full"
             />
             <p className="absolute bottom-1 text-white font-bold left-2 ">
-              template 1
+              template 2
             </p>
           </div>
           <p className="px-3 mt-2 text-sm mb-2">

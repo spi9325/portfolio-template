@@ -50,7 +50,6 @@ export const Hero = () => {
     getBasicDetails();
     getHeroDetails();
   }, []);
-  console.log(hero,"herrooooo")
   return (
     <section className="mt-[50px] max-w-[1440px] mx-auto bg-amber-300 grid md:grid-cols-2">
       <div className="w-full px-10 relative h-[400px] overflow-hidden bg-slate-100">
