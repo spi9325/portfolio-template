@@ -32,8 +32,8 @@ export const HeroSectionForm = () => {
   async function saveHeroSectionDetails(
     values: z.infer<typeof HeroSectionFormSchema>
   ) {
-    const store = JSON.parse(localStorage.getItem("Email")!);
-    
+    const Email = localStorage.getItem("Email")
+    console.log(Email,"from hero form")
     await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/addtemplate/herodata`,
       {
@@ -41,7 +41,7 @@ export const HeroSectionForm = () => {
         Tagline: values.Tagline,
         Profile: values.Profile,
         Image: values.Image,
-        Email:store.Email
+        Email:Email
       }
     );
   }
