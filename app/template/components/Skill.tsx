@@ -30,7 +30,7 @@ export const Skill = () => {
     }
 
     getSkillDetails();
-  }, [skill]);
+  }, []);
   return (
     <section className="max-w-[1440px] mx-auto mt-4 p-1">
       <div className="w-full text-2xl flex justify-center items-center mb-4">
