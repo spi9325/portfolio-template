@@ -25,7 +25,7 @@ export const Skill = () => {
         { Email }
       );
       if (result.data) {
-        setSkill((prev) => [...prev, result.data.allSkillDetails]);
+        setSkill((prev) => [...prev, ...result.data.allSkillDetails]);
       }
     }
 
