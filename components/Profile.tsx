@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { StarRating } from "./StarRatings";
 import axios from "axios";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 interface profileType {
   Age: string;
@@ -51,12 +53,13 @@ export const Profile = () => {
   }, [email]); 
 
   return (
-    <div className="flex flex-row gap-2 px-2 overflow-x-scroll relative md:pr-4">
+  
+    <div className="flex flex-row gap-2 px-2 overflow-x-scroll relative md:pr-4 relative">
       {profile?.map((cur, index) => {
         return (
           <div
             key={index}
-            className="border border-black bg-yellow-300 flex flex-col items-center py-[50px] min-w-full sm:min-w-[280px] rounded-lg"
+            className="border border-black bg-yellow-300 flex flex-col items-center py-[40px] min-w-full sm:min-w-[280px] rounded-lg"
           >
             <div className="w-[100px] h-[100px] rounded-full flex justify-center items-center bg-amber-300">
               profile
@@ -83,9 +86,13 @@ export const Profile = () => {
                 <p className="">Projects</p>
               </div>
             </div>
+            <Link href={`/profile/${encodeURIComponent(cur.Email)}`}>
+                <Button className="mt-4 px-5">View Profile</Button>
+            </Link>
           </div>
         );
       })}
     </div>
+  
   );
 };
