@@ -36,19 +36,19 @@ export const Hero = () => {
         setProfile((prev) => [...prev, result.data.allBasicDetails]);
       }
     }
-    async function getHeroDetails() {
-      const result = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/get/herodata`,
-        { Email:Email }
-      );
-      if (result.data) {
-        setHero((prev) => [...prev, result.data.allHeroDetails]);
+    // async function getHeroDetails() {
+    //   const result = await axios.post(
+    //     `${process.env.NEXT_PUBLIC_BACKEND_URL}/get/herodata`,
+    //     { Email:Email }
+    //   );
+    //   if (result.data) {
+    //     setHero((prev) => [...prev, result.data.allHeroDetails]);
         
-      }
-    }
+    //   }
+    // }
 
     getBasicDetails();
-    getHeroDetails();
+    // getHeroDetails();
   }, []);
   return (
     <section className="mt-[50px] max-w-[1440px] mx-auto bg-amber-300 grid md:grid-cols-2">

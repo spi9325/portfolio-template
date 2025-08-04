@@ -61,12 +61,12 @@ export const Profile = () => {
             <div className="w-[100px] h-[100px] rounded-full flex justify-center items-center bg-amber-300">
               profile
             </div>
-            <p className="mt-2 font-bold text-lg">{cur.Name}</p>
-            <p className="">Age: {cur.Age}</p>
-            <p className="bg-black text-white px-2 rounded-lg mt-1">{cur.Role}</p>
+            <p className="mt-2 font-bold text-lg">{cur?.Name}</p>
+            <p className="">Age: {cur?.Age}</p>
+            <p className="bg-black text-white px-2 rounded-lg mt-1">{cur?.Role}</p>
             <div className="flex justify-center items-center gap-1 mt-2 text-sm">
               <CiLocationOn />
-              <p className="">{cur.Location}</p>
+              <p className="">{cur?.Location}</p>
             </div>
             <div className="flex justify-center items-center gap-1 mt-2">
               <StarRating rating={4.5} />
@@ -75,11 +75,11 @@ export const Profile = () => {
             <p className="w-[80%] md:w-full text-center mt-4">{review}</p>
             <div className="flex justify-between items-center gap-4 mt-4">
               <div className="bg-amber-300 flex justify-center items-center flex-col w-[100px] py-1 rounded-lg">
-                <p className="font-bold">{cur.Experience} years</p>
+                <p className="font-bold">{cur?.Experience} years</p>
                 <p className="">Experience</p>
               </div>
               <div className="bg-amber-100 flex justify-center items-center flex-col w-[100px] py-1 rounded-lg">
-                <p className="">{cur.Projects}</p>
+                <p className="">{cur?.Projects}</p>
                 <p className="">Projects</p>
               </div>
             </div>
