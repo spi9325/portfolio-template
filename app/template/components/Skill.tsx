@@ -22,15 +22,15 @@ export const Skill = () => {
     async function getSkillDetails() {
       const result = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/get/skilldata`,
-        { Email: Email }
+        { Email }
       );
       if (result.data) {
-        setSkill((prev) => [...prev, ...result.data.allSkillDetails]);
+        setSkill((prev) => [...prev, result.data.allSkillDetails]);
       }
     }
 
     getSkillDetails();
-  }, []);
+  }, [skill]);
   return (
     <section className="max-w-[1440px] mx-auto mt-4 p-1">
       <div className="w-full text-2xl flex justify-center items-center mb-4">
