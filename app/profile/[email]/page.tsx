@@ -36,7 +36,7 @@ export default function Page() {
   const [skill, setSkill] = useState<skillType[]>([]);
 
   const params = useParams();
-  let Email = decodeURIComponent(params.email?.toString()!);
+  const Email = decodeURIComponent(params.email?.toString()!);
 
   useEffect(() => {
     async function getSkillDetails() {
